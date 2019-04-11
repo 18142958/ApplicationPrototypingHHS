@@ -6,6 +6,7 @@ public abstract class Shape extends PixelGrid {
         super(SIZEX, SIZEY);
         this.xPos = 0;
         this.yPos = 0;
+        //comment test
 
     }
 
