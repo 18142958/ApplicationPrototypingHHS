@@ -25,3 +25,4 @@ hs_err_pid*
 # I guess this is not nessecary
 .idea/
 out/
+ConsoleDrawing.iml
