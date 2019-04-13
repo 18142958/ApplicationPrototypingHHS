@@ -22,6 +22,9 @@ public class ConsoleDrawing {
 //        TODO: complete this code
 //
         Canvas myCanvas = new Canvas(51,7);
+        myRectangle.makeHollow();
+        myOval.makeHollow();
+        myTriangle.makeHollow();
         myCanvas.add(myRectangle, 0,0);
         myCanvas.add(myOval, 18,0);
         myCanvas.add(myTriangle,36,0);

@@ -53,4 +53,45 @@ public abstract class Shape extends PixelGrid {
         this.yPos = yPos;
     }
 
+    public void makeHollow(){
+        for(int i =1; i < SIZEY-1; i++){
+            int eerstePixel=0;
+            int laatstePixel=0;
+            for(int j=0; j < SIZEX; j++){
+                if(isFilledPixel(j,i)){
+                    eerstePixel = j;
+                    break;
+                }
+
+            }
+            for(int k=SIZEX-1; k >=0; k--){
+                if(isFilledPixel(k,i)){
+                    laatstePixel=k;
+                    break;
+                }
+            }
+
+            for(int l=0;l <SIZEX;l++){
+                if(l != eerstePixel && l != laatstePixel){
+                    clearPixel(l,i);
+                }
+            }
+        }
+
+    }
+
+    public int getArea(){
+        int area=0;
+        for(int i=0; i <SIZEY;i++){
+            for(int j=0; j < SIZEX; j++){
+                if(isFilledPixel(j,i)){
+                    area++;
+                }
+            }
+        }
+        return area;
+
+    }
+
+
 }
