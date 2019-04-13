@@ -30,10 +30,7 @@ public class Canvas extends PixelGrid {
     }
     public void add(Shape shape, int xPos, int yPos){
 
-        int xEnd = xPos + shape.SIZEX;
-        int yEnd = yPos + shape.SIZEY;
-
-        if(xEnd <= this.SIZEX && yEnd <= this.SIZEY){
+        if(shapeFitsCanvas(shape, xPos, yPos)){
             shape.setXPos(xPos);
             shape.setYPos(yPos);
             this.shapes.add(shape);
@@ -41,15 +38,28 @@ public class Canvas extends PixelGrid {
         }
     }
 
-    public void move(int index, int xPos, int yPos){
-            this.shapes.get(index).xPos += xPos;
-            this.shapes.get(index).yPos += yPos;
-            this.fill();
+    public void move(int index, int xPos, int yPos) throws Exception {
 
+            xPos = this.shapes.get(index).xPos + xPos;
+            yPos = this.shapes.get(index).yPos + yPos;
+
+            if (shapeFitsCanvas(this.shapes.get(index), xPos, yPos)){
+                this.shapes.get(index).yPos = yPos;
+                this.shapes.get(index).xPos =xPos;
+                this.fill();
+            } else{
+                throw new Exception("Past niet");
+            }
     }
 
     public void remove(int index){
 
+    }
+
+    public boolean shapeFitsCanvas(Shape shape, int xPos, int yPos){
+        int xEnd = xPos + shape.SIZEX;
+        int yEnd = yPos + shape.SIZEY;
+        return (xEnd <= this.SIZEX && yEnd <= this.SIZEY);
     }
 
 }
