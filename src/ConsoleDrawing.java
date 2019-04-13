@@ -36,21 +36,32 @@ public class ConsoleDrawing {
 //
 //        TODO: complete this code
 //
-//        Shape linkervoet = ...
-//        Shape rechtervoet = ...
-//        Shape linkerbeen = ...
-//        Shape rechterbeen = ...
-//        Shape linkerarm = ...
-//        Shape rechterarm = ...
-//        Shape romp = ...
-//        Shape hoofd = ...
-//        Shape extra1 = ... - bedenk zelf iets dat je poppetje uniek maakt
-//        Shape extra2 = ... - bedenk zelf iets dat je poppetje uniek maakt
-//
-//        Canvas papier = ...
-//        papier.add(...) voeg al je Shapes toe aan het papier
+        System.out.println("Opdracht 2-4");
+        Shape linkervoet = new Rectangle(10,3);
+        Shape rechtervoet = new Rectangle(10,3);
+        Shape linkerbeen = new Rectangle(3,10);
+        Shape rechterbeen = new Rectangle(3,10);
+        Shape linkerarm = new Rectangle(12,2);
+        Shape rechterarm = new Rectangle(12,2);
+        Shape romp = new Oval(25,15);
+        Shape hoofd = new Oval(17,7);
+        Shape hat = new Rectangle(29,2);
+        Shape hatTop = new Rectangle(9,5);
+
+        Canvas papier = new Canvas(60,42);
+        papier.add(linkervoet, 15,0); //voeg al je Shapes toe aan het papier
+        papier.add(rechtervoet, 30,0);
+        papier.add(linkerbeen, 22,3);
+        papier.add(rechterbeen, 30,3);
+        papier.add(romp, 15,13);
+        papier.add(hoofd, 19,28);
+        papier.add(linkerarm, 5,22);
+        papier.add(rechterarm, 37,22);
+        papier.add(hat, 13,34);
+        papier.add(hatTop, 23,36);
+
 //        papier.fill(); // is dat nodig, of kan dat slimmer?
-//        System.out.println(papier);
+        System.out.println(papier);
 //
 //        todo (end)
 
