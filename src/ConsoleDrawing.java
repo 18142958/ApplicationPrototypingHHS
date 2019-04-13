@@ -48,7 +48,7 @@ public class ConsoleDrawing {
         Shape hat = new Rectangle(29,2);
         Shape hatTop = new Rectangle(9,5);
 
-        Canvas papier = new Canvas(60,42);
+        Canvas papier = new Canvas(60,47);
         papier.add(linkervoet, 15,0); //voeg al je Shapes toe aan het papier
         papier.add(rechtervoet, 30,0);
         papier.add(linkerbeen, 22,3);
@@ -66,8 +66,20 @@ public class ConsoleDrawing {
 //        todo (end)
 
 //        System.out.println();
-//        System.out.println("Opdracht 2-5");
+        System.out.println("Opdracht 2-5");
+        papier.move(9, 0, 5);
+        papier.move(8, 0, 5);
+        papier.move(7, 5, 2);
+        papier.move(6, -5, 2);
+        papier.move(5, 0, 3);
+        papier.move(4, 0, 2);
+        papier.move(3, 0, 1);
+        papier.move(2, 0, 1);
+        papier.move(1, 0, 0);
+        papier.move(0, 0, 0);
+
 //        System.out.println();
+        System.out.println(papier);
 //
 //        TODO: verplaats alle shapes zodat je een 'exploded view' krijgt en teken dan het resultaat
 //

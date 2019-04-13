@@ -42,6 +42,9 @@ public class Canvas extends PixelGrid {
     }
 
     public void move(int index, int xPos, int yPos){
+            this.shapes.get(index).xPos += xPos;
+            this.shapes.get(index).yPos += yPos;
+            this.fill();
 
     }
 
