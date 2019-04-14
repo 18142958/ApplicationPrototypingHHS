@@ -128,6 +128,22 @@ public abstract class Shape extends PixelGrid {
     }
 
     /**
+     * Spiegel de shape verticaal
+     */
+    public void mirrorV(){
+        String[][] pixelsCopy = this.copyPixelsArray();
+        this.clearAllPixels();
+        for(int y=0; y< SIZEY; y++){
+            for(int x= SIZEX-1; x >= 0; x--){
+                int kolom = SIZEX-1-x; //zorg dat de laatste kolom de eerste wordt etc...
+                if(pixelsCopy[x][y].equals(FILLED)){
+                    this.fillPixel(kolom,y);
+                }
+            }
+        }
+    }
+
+    /**
      * Maak een kopie van de pixels array
      * @return
      */
