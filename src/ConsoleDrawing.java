@@ -13,6 +13,7 @@ public class ConsoleDrawing {
 
 
         Triangle myTriangle = new Triangle(15, 7);
+        //myTriangle.rotateL();
         System.out.println(myTriangle);
 
         System.out.println();

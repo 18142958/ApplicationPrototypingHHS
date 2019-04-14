@@ -143,6 +143,43 @@ public abstract class Shape extends PixelGrid {
         }
     }
 
+    public void rotateR(){
+        String[][] tempArray =this.copyPixelsArray();
+        this.initializePixels(SIZEY,SIZEX);
+        for(int x=0; x < SIZEY;x++){
+            for(int y=0;y <SIZEX;y++){
+                this.pixels[y][x]= tempArray[x][y];
+            }
+        }
+    }
+
+    public void rotateL(){
+        String[][] tempArray = this.copyPixelsArray();
+        this.initializePixels(SIZEY,SIZEX);
+        for(int x=0; x<SIZEY;x++){
+            for(int y=0; y<SIZEX;y++){
+                int newX = SIZEX-1-y;
+                int newY = SIZEY-1-x;
+                this.pixels[newX][newY] = tempArray[x][y];
+
+            }
+        }
+
+    }
+
+/*    public void rotateL(){
+        String[][]tempArray = this.copyPixelsArray();
+        this.clearAllPixels();
+        for(int x=0;x <SIZEX;x++){
+            for(int y=0;y<SIZEY;y++){
+                if(tempArray[x][y].equals('FILLED')){
+                    int newX = -1*y;
+                    int newY = x;
+                }
+            }
+        }
+    }
+*/
     /**
      * Maak een kopie van de pixels array
      * @return

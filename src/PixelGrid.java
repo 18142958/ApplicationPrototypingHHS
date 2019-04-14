@@ -1,7 +1,7 @@
 public abstract class PixelGrid {
     protected String pixels[][];
-    protected final int SIZEX;
-    protected final int SIZEY;
+    protected int SIZEX;
+    protected int SIZEY;
 
     protected static final String FILLED = "*";
     protected static final String EMPTY  = " ";
@@ -10,6 +10,11 @@ public abstract class PixelGrid {
         if (SIZEX <= 0 || SIZEY <= 0) {
             throw new IllegalArgumentException("Illegal size of shape");
         }
+        this.initializePixels(SIZEX,SIZEY);
+    }
+
+    protected void initializePixels(int SIZEX, int SIZEY){
+
         this.SIZEX = SIZEX;
         this.SIZEY = SIZEY;
         this.pixels = new String[SIZEX][SIZEY];
