@@ -53,30 +53,21 @@ public abstract class Shape extends PixelGrid {
         this.yPos = yPos;
     }
 
+
     public void makeHollow(){
-        for(int i =1; i < SIZEY-1; i++){
-            int eerstePixel=0;
-            int laatstePixel=0;
-            for(int j=0; j < SIZEX; j++){
-                if(isFilledPixel(j,i)){
-                    eerstePixel = j;
-                    break;
-                }
-
-            }
-            for(int k=SIZEX-1; k >=0; k--){
-                if(isFilledPixel(k,i)){
-                    laatstePixel=k;
-                    break;
-                }
-            }
-
-            for(int l=0;l <SIZEX;l++){
-                if(l != eerstePixel && l != laatstePixel){
-                    clearPixel(l,i);
+        //eerste en laatste regel wordt altijd geprint en kunnen we dus overslaan
+        for(int i =1; i < SIZEY-1; i++) {
+            //zoek de eerste pixel daarna elke pixel leegmaken behalve de laatst gevulde pixel
+            boolean firstPixelFound = false;
+            for (int j = 0; j < SIZEX - 1; j++) {
+                if (!firstPixelFound && isFilledPixel(j, i)) {
+                    firstPixelFound = true;
+                } else if (firstPixelFound && isFilledPixel(j + 1, i)) { //als volgende pixel gevuld is dan deze leegmaken
+                    this.clearPixel(j, i);
                 }
             }
         }
+
 
     }
 
