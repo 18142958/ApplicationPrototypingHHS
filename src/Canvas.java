@@ -52,6 +52,14 @@ public class Canvas extends PixelGrid {
             }
     }
 
+    public void invertShape(int index){
+        Shape shape = this.shapes.get(index);
+        shape.invert();
+        this.fill();
+    }
+
+
+
     public void remove(int index){
 
     }

@@ -94,4 +94,19 @@ public abstract class Shape extends PixelGrid {
     }
 
 
+    /**
+     * Keer de waarden van alle pixels om
+     */
+    public void invert(){
+        for(int y=0;y < SIZEY; y++){
+            for(int x=0; x< SIZEX;x++){
+                if(this.isFilledPixel(x,y)) {
+                    this.clearPixel(x,y);
+
+                }else{
+                    this.fillPixel(x,y);
+                }
+            }
+        }
+    }
 }

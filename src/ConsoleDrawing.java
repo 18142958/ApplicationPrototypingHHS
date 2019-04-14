@@ -86,6 +86,10 @@ public class ConsoleDrawing {
             System.out.println(e.getMessage());
         }
 //        System.out.println();
+        System.out.println("Opdracht 3-2 invert hoofd en romp");
+        papier.invertShape(4);
+        papier.invertShape(5);
+        System.out.println(papier);
 
 //
 //        TODO: verplaats alle shapes zodat je een 'exploded view' krijgt en teken dan het resultaat
