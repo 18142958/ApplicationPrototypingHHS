@@ -25,6 +25,7 @@ public class ConsoleDrawing {
         myRectangle.makeHollow();
         myOval.makeHollow();
         myTriangle.makeHollow();
+        myTriangle.mirrorH();
         myCanvas.add(myRectangle, 0,0);
         myCanvas.add(myOval, 18,0);
         myCanvas.add(myTriangle,36,0);

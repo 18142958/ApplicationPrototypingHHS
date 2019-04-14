@@ -109,4 +109,37 @@ public abstract class Shape extends PixelGrid {
             }
         }
     }
+
+    /**
+     * Spiegel de shape horizontaal
+     */
+    public void mirrorH(){
+        String[][] pixelsCopy = this.copyPixelsArray();
+        this.clearAllPixels();
+       for(int y=SIZEY-1; y >=0; y--){
+           int rij = SIZEY-1-y ;// zorg dat de laatste rij de eerste wordt
+           for(int x=0; x < SIZEX;x++){
+               if(pixelsCopy[x][y].equals(FILLED)){
+                   this.fillPixel(x,rij);
+               }
+           }
+       }
+
+    }
+
+    /**
+     * Maak een kopie van de pixels array
+     * @return
+     */
+    private String[][] copyPixelsArray(){
+       String[][] tempArray = new String[SIZEX][SIZEY];
+       for(int y=0; y<SIZEY;y++){
+           for(int x=0;x<SIZEX;x++){
+               tempArray[x][y] = this.pixels[x][y];
+           }
+
+       }
+       return tempArray;
+
+    }
 }
